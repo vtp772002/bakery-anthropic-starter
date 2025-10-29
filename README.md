@@ -31,3 +31,4 @@ http://localhost:3000
 ## Notes
 - This starter focuses on the **look and component structure**. Hook it up to a CMS/commerce (Sanity, Shopify, etc.) and add pages as needed.
 - Accessible by default: visible focus, high contrast, semantic structure.
+# project_bakery_july77
