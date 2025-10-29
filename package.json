@@ -1,0 +1,39 @@
+{
+  "name": "bakery-anthropic-starter",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "sync:breadfactory:images": "tsx ./scripts/sync-breadfactory-images.ts",
+    "docker:up": "docker-compose up -d && npm run docker:info",
+    "docker:down": "docker-compose down",
+    "docker:logs": "docker-compose logs -f",
+    "docker:info": "bash scripts/show-network-access.sh"
+  },
+  "dependencies": {
+    "@stripe/react-stripe-js": "^3.9.0",
+    "@stripe/stripe-js": "^7.8.0",
+    "autoprefixer": "^10.4.21",
+    "clsx": "latest",
+    "framer-motion": "latest",
+    "lucide-react": "latest",
+    "next": "latest",
+    "next-intl": "^4.3.4",
+    "postcss": "^8.5.6",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-icons": "5.5.0",
+    "resend": "^6.0.1",
+    "stripe": "^18.4.0",
+    "tailwindcss": "^3.4.17"
+  },
+  "devDependencies": {
+    "@types/node": "24.2.1",
+    "@types/react": "19.1.9",
+    "cheerio": "^1.1.2",
+    "tsx": "^4.20.4",
+    "typescript": "latest"
+  }
+}

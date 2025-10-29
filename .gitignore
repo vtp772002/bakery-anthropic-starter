@@ -1,8 +1,10 @@
-.DS_Store
 node_modules/
 .next/
+out/
 dist/
-.env*
-npm-debug.log*
-yarn.lock
-pnpm-lock.yaml
+build/
+.env
+.env.*
+*.log
+coverage/
+.DS_Store

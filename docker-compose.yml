@@ -1,0 +1,21 @@
+services:
+  bakery-web:
+    container_name: bakery-web
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "0.0.0.0:3000:3000"
+    environment:
+      - NODE_ENV=production
+      # Thêm các environment variables khác nếu cần
+      # - STRIPE_SECRET_KEY=${STRIPE_SECRET_KEY}
+      # - NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=${NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY}
+    restart: unless-stopped
+    networks:
+      - bakery-network
+
+networks:
+  bakery-network:
+    driver: bridge
+

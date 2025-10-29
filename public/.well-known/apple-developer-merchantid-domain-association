@@ -1,0 +1,6 @@
+-----BEGIN CERTIFICATE-----
+# Placeholder file for Apple Pay domain verification.
+# Replace this entire file with the exact content provided by Stripe/Apple
+# for your Merchant ID domain association.
+-----END CERTIFICATE-----
+

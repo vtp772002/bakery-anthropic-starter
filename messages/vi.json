@@ -1,0 +1,63 @@
+{
+  "nav": {
+    "home": "Trang chủ",
+    "locations": "Địa điểm", 
+    "account": "Tài khoản",
+    "order": "Đặt hàng"
+  },
+  "hero": {
+    "title": "Bánh mì, suy nghĩ thấu đáo.",
+    "subtitle": "Nướng bánh theo lô nhỏ với ngũ cốc theo mùa và triết lý khoa học."
+  },
+  "cta": {
+    "order": "Đặt hàng ngay",
+    "upgrade": "Nâng cấp Pro"
+  },
+  "common": {
+    "todaysBakes": "Bánh hôm nay",
+    "upgradeShort": "Nâng cấp Pro",
+    "orderNow": "Đặt hàng ngay"
+  },
+  "checkout": {
+    "title": "Thanh toán",
+    "steps": {
+      "customer": "Thông tin khách hàng",
+      "shipping": "Giao hàng / Nhận tại quầy",
+      "payment": "Thanh toán",
+      "review": "Xem lại"
+    },
+    "customer": {
+      "firstName": "Họ",
+      "lastName": "Tên",
+      "email": "Email",
+      "phone": "Số điện thoại",
+      "next": "Tiếp tục"
+    },
+    "shipping": {
+      "address": "Địa chỉ",
+      "apartment": "Căn hộ/Tòa (tuỳ chọn)",
+      "city": "Thành phố",
+      "state": "Tỉnh/Bang",
+      "zip": "Mã bưu chính",
+      "pickupLocation": "Chọn địa điểm nhận",
+      "prev": "Quay lại",
+      "next": "Tiếp tục"
+    },
+    "payment": {
+      "note": "Thanh toán an toàn qua Stripe. Apple Pay/Google Pay sẽ hiển thị nếu đủ điều kiện, hoặc nhập thẻ của bạn.",
+      "prev": "Quay lại",
+      "next": "Tiếp tục",
+      "pay": "Thanh toán"
+    },
+    "review": {
+      "summary": "Tóm tắt đơn hàng",
+      "example": "Sản phẩm ví dụ…",
+      "prev": "Quay lại",
+      "pay": "Thanh toán"
+    },
+    "sidebar": {
+      "summary": "Tóm tắt đơn hàng",
+      "note": "Tạm tính, phương thức giao, ngày"
+    }
+  }
+}

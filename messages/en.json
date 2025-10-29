@@ -1,0 +1,62 @@
+{
+  "nav": {
+    "home": "Home",
+    "locations": "Locations", 
+    "account": "Account",
+    "order": "Order"
+  },
+  "hero": {
+    "title": "Bread, thought‑through.",
+    "subtitle": "Small‑batch baking with seasonal grains and a science‑first ethos."
+  },
+  "cta": {
+    "order": "Order now",
+    "upgrade": "Upgrade to Pro"
+  },
+  "common": {
+    "todaysBakes": "Today's bakes",
+    "upgradeShort": "Upgrade Pro",
+    "orderNow": "Order Now"
+  },
+  "checkout": {
+    "title": "Checkout",
+    "steps": {
+      "customer": "Customer",
+      "shipping": "Shipping / Pickup",
+      "payment": "Payment",
+      "review": "Review"
+    },
+    "customer": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "phone": "Phone",
+      "next": "Next"
+    },
+    "shipping": {
+      "address": "Street address",
+      "apartment": "Apt/suite (opt)",
+      "city": "City",
+      "state": "State",
+      "zip": "Zip",
+      "prev": "Previous",
+      "next": "Next"
+    },
+    "payment": {
+      "note": "Secure payments by Stripe. Apple Pay/Google Pay will appear if available, or enter your card.",
+      "prev": "Previous",
+      "next": "Next",
+      "pay": "Pay now"
+    },
+    "review": {
+      "summary": "Order summary",
+      "example": "Example items…",
+      "prev": "Previous",
+      "pay": "Pay now"
+    },
+    "sidebar": {
+      "summary": "Order summary",
+      "note": "Subtotal, delivery method, date"
+    }
+  }
+}
