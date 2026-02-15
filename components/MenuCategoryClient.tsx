@@ -2,6 +2,7 @@
 
 import { useCart } from "@/components/cart/CartContext";
 import Image from "next/image";
+import { LiquidMetalButton } from "@/components/ui/liquid-metal-button";
 
 type Props = {
   categorySlug: string;
@@ -38,12 +39,12 @@ export default function MenuCategoryClient({ categorySlug, items }: Props) {
               <div className="font-semibold">{typeof item.price === 'number' ? `$${item.price.toFixed(2)}` : ''}</div>
             </div>
             <div className="mt-4 flex justify-end">
-              <button
-                className="btn btn-accent rounded-xl"
+              <LiquidMetalButton
+                size="md"
                 onClick={() => addItem({ id, name: item.name, price: typeof item.price === 'number' ? item.price : 0, image: item.image, qty: 1 })}
               >
                 Add to cart
-              </button>
+              </LiquidMetalButton>
             </div>
           </div>
         );

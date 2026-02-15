@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useTranslations } from 'next-intl';
+import { LiquidMetalButton } from '@/components/ui/liquid-metal-button';
 
 export default function Hero() {
   const t = useTranslations('hero');
@@ -33,12 +34,11 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
-          <Link
-            href="#"
-            className="underline underline-offset-[6px] decoration-1 text-neutral-800"
-          >
-            {common('todaysBakes')}
-          </Link>
+          <LiquidMetalButton
+            label={common('todaysBakes')}
+            onClick={() => window.location.href = '/en/menu'}
+            viewMode="text"
+          />
         </motion.div>
       </div>
     </section>

@@ -43,6 +43,7 @@ http://localhost:3000
 ## 📚 Documentation
 
 - 📘 [SETUP_AFTER_CLONE.md](./SETUP_AFTER_CLONE.md) - **Hướng dẫn setup sau khi clone** (BẮT BUỘC đọc!)
+- 🔄 [GIT_WORKFLOW.md](./GIT_WORKFLOW.md) - **Git workflow & collaboration guide** (Làm việc nhóm)
 - 💳 [QUICK_START.md](./QUICK_START.md) - Stripe payment integration quick guide
 - 🔒 [STRIPE_SETUP.md](./STRIPE_SETUP.md) - Chi tiết về Stripe setup
 - 🐳 [DOCKER_GUIDE.md](./DOCKER_GUIDE.md) - Hướng dẫn chạy với Docker

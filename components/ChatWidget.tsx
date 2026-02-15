@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { MessageCircle, X, Send, Bot } from "lucide-react";
+import { MessageCircle, X, Send, Bot, Star } from "lucide-react";
 import Link from "next/link";
+import { LiquidMetalButton } from '@/components/ui/liquid-metal-button';
 
 const SYSTEM_PROMPT = `Bakery & Beverages Chatbot – System Prompt
 
@@ -354,13 +355,22 @@ export default function ChatWidget() {
 
   return (
     <>
-      <button
-        aria-label="Open chat"
-        onClick={() => setOpen((v) => !v)}
-        className="hide-when-chat-open-mobile hide-when-cart-open-desktop fixed right-4 bottom-4 md:bottom-6 md:right-6 z-50 rounded-full shadow-cardHover border border-accent bg-accent text-accent-contrast p-3 hover:brightness-95 transition"
-      >
-        {open ? <X /> : <MessageCircle />}
-      </button>
+      <div className="hide-when-chat-open-mobile hide-when-cart-open-desktop fixed right-4 bottom-4 md:bottom-6 md:right-6 z-50">
+        {open ? (
+          <LiquidMetalButton
+            size="sm"
+            onClick={() => setOpen((v) => !v)}
+            aria-label="Close chat"
+          >
+            <X size={16} />
+          </LiquidMetalButton>
+        ) : (
+          <LiquidMetalButton
+            onClick={() => setOpen((v) => !v)}
+            viewMode="icon"
+          />
+        )}
+      </div>
 
       {/* Desktop side panel overlay - keep bottom X visible */}
       <div className={`hidden md:block fixed inset-0 z-[40] ${open ? 'visible' : 'invisible'}`} aria-hidden={!open}>
@@ -383,9 +393,13 @@ export default function ChatWidget() {
                 <div className="font-serif text-[18px]">J\\T Virtual Assistant</div>
               </div>
             </div>
-            <button aria-label="Close chat" className="p-1 rounded-md hover:bg-accent-contrast/10" onClick={() => setOpen(false)}>
+            <LiquidMetalButton
+              size="sm"
+              onClick={() => setOpen(false)}
+              aria-label="Close chat"
+            >
               <X size={16} />
-            </button>
+            </LiquidMetalButton>
           </div>
           <div ref={desktopScrollRef} className="flex-1 overflow-y-auto px-4 py-4 space-y-3">
             {messages.map((m) => (
@@ -432,10 +446,13 @@ export default function ChatWidget() {
               readOnly={mobileKbdLocked}
               onTouchStart={unlockMobileInputImmediate}
             />
-            <button type="submit" className="inline-flex items-center justify-center h-11 px-4 rounded-xl border border-accent/50 hover:bg-accent/10">
+            <LiquidMetalButton
+              type="submit"
+              size="sm"
+            >
               <Send size={16} />
               <span className="sr-only">Send</span>
-            </button>
+            </LiquidMetalButton>
           </form>
         </section>
       </div>
@@ -464,9 +481,13 @@ export default function ChatWidget() {
                 <div className="font-serif text-[17px]">J\\T Virtual Assistant</div>
               </div>
             </div>
-            <button aria-label="Close chat" className="p-1 rounded-md hover:bg-accent-contrast/10" onClick={() => setOpen(false)}>
+            <LiquidMetalButton
+              size="sm"
+              onClick={() => setOpen(false)}
+              aria-label="Close chat"
+            >
               <X size={16} />
-            </button>
+            </LiquidMetalButton>
           </div>
           <div ref={mobileScrollRef} className="flex-1 overflow-y-auto px-4 py-3 space-y-3">
             {messages.map((m) => (
@@ -517,10 +538,13 @@ export default function ChatWidget() {
               readOnly={mobileKbdLocked}
               onTouchStart={unlockMobileInputImmediate}
             />
-            <button type="submit" className="inline-flex items-center justify-center h-12 px-4 rounded-xl border border-accent/50 hover:bg-accent/10">
+            <LiquidMetalButton
+              type="submit"
+              size="md"
+            >
               <Send size={16} />
               <span className="sr-only">Send</span>
-            </button>
+            </LiquidMetalButton>
           </form>
         </section>
       </div>

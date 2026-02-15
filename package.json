@@ -13,6 +13,7 @@
     "docker:info": "bash scripts/show-network-access.sh"
   },
   "dependencies": {
+    "@paper-design/shaders": "^0.0.71",
     "@stripe/react-stripe-js": "^3.9.0",
     "@stripe/stripe-js": "^7.8.0",
     "autoprefixer": "^10.4.21",

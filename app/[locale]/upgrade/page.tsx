@@ -1,6 +1,6 @@
 "use client";
 
-import StyledButton from "@/components/StyledButton";
+import { LiquidMetalButton } from "@/components/ui/liquid-metal-button";
 
 export default function UpgradePage() {
   // Temporarily disabled - feature under development
@@ -45,18 +45,12 @@ export default function UpgradePage() {
           </div>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <StyledButton 
-              variant="secondary" 
-              onClick={() => window.history.back()}
-            >
+            <LiquidMetalButton onClick={() => window.history.back()}>
               Quay lại
-            </StyledButton>
-            <StyledButton 
-              variant="accent"
-              onClick={() => window.location.href = '/'}
-            >
+            </LiquidMetalButton>
+            <LiquidMetalButton onClick={() => window.location.href = '/'}>
               Về trang chủ
-            </StyledButton>
+            </LiquidMetalButton>
           </div>
         </div>
       </div>

@@ -7,7 +7,7 @@ import {
   useStripe,
   PaymentRequestButtonElement,
 } from "@stripe/react-stripe-js";
-import StyledButton from "./StyledButton";
+import { LiquidMetalButton } from "@/components/ui/liquid-metal-button";
 
 type Method = "card" | "google" | "apple";
 
@@ -140,9 +140,14 @@ export default function PaymentForm({ amount, currency = "usd", method, onAvaila
           </div>
           <PaymentElement id="payment-element" />
           {message && <div className="text-sm text-rose-600">{message}</div>}
-          <StyledButton variant="accent" size="md" disabled={!stripe || loading}>
-            {loading ? "Processing..." : "Pay now"}
-          </StyledButton>
+          <LiquidMetalButton 
+            type="submit"
+            disabled={!stripe || loading}
+            loading={loading}
+            fullWidth
+          >
+            Pay now
+          </LiquidMetalButton>
         </form>
       )}
       {(method === "google" && !availability.google) && (

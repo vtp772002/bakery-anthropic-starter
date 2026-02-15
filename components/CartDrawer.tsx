@@ -5,6 +5,7 @@ import Image from "next/image";
 import { ShoppingCart, X } from "lucide-react";
 import { useCart } from "./cart/CartContext";
 import Link from "next/link";
+import { LiquidMetalButton } from "./ui/liquid-metal-button";
 
 type Props = {
   inlineTrigger?: boolean; // render the Cart button inside this component
@@ -40,8 +41,8 @@ export default function CartDrawer({ inlineTrigger = true, open: controlledOpen,
   return (
     <>
       {inlineTrigger && (
-        <button
-          className="relative btn btn-accent rounded-2xl"
+        <LiquidMetalButton
+          size="md"
           onClick={() => setOpen(true)}
           aria-label="Open cart"
         >
@@ -52,7 +53,7 @@ export default function CartDrawer({ inlineTrigger = true, open: controlledOpen,
               {qtyTotal}
             </span>
           )}
-        </button>
+        </LiquidMetalButton>
       )}
 
       {/* Drawer */}
@@ -70,9 +71,13 @@ export default function CartDrawer({ inlineTrigger = true, open: controlledOpen,
         >
           <div className="flex items-center justify-between p-4 border-b border-neutral-200 flex-shrink-0">
             <div className="font-semibold">Your cart</div>
-            <button className="p-2" onClick={() => setOpen(false)} aria-label="Close cart">
+            <LiquidMetalButton
+              size="sm"
+              onClick={() => setOpen(false)}
+              aria-label="Close cart"
+            >
               <X size={18} />
-            </button>
+            </LiquidMetalButton>
           </div>
           <div className="flex-1 overflow-y-auto p-4 space-y-4">
             {items.length === 0 ? (
@@ -101,7 +106,12 @@ export default function CartDrawer({ inlineTrigger = true, open: controlledOpen,
                       value={it.qty}
                       onChange={(e) => updateQty(it.id, Number(e.target.value))}
                     />
-                    <button className="btn btn-ghost" onClick={() => removeItem(it.id)}>Remove</button>
+                    <LiquidMetalButton
+                      size="sm"
+                      onClick={() => removeItem(it.id)}
+                    >
+                      Remove
+                    </LiquidMetalButton>
                   </div>
                 </div>
               ))
@@ -115,10 +125,24 @@ export default function CartDrawer({ inlineTrigger = true, open: controlledOpen,
               <div className="flex justify-between font-medium mt-2"><span>Total</span><span>${total.toFixed(2)}</span></div>
             </div>
             <div className="flex gap-2 pt-3">
-              <Link href="/checkout" className="btn btn-accent flex-1 rounded-xl text-center" onClick={() => setOpen(false)}>
-                Proceed to checkout
-              </Link>
-              <button className="btn btn-secondary rounded-xl" onClick={() => setOpen(false)}>Close</button>
+              <div className="flex-1">
+                <LiquidMetalButton
+                  fullWidth
+                  size="md"
+                  onClick={() => {
+                    setOpen(false);
+                    window.location.href = '/checkout';
+                  }}
+                >
+                  Proceed to checkout
+                </LiquidMetalButton>
+              </div>
+              <LiquidMetalButton
+                size="md"
+                onClick={() => setOpen(false)}
+              >
+                Close
+              </LiquidMetalButton>
             </div>
           </div>
         </aside>

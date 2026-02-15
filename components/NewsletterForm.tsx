@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { LiquidMetalButton } from "@/components/ui/liquid-metal-button";
 
 export default function NewsletterForm() {
   const [email, setEmail] = useState("");
@@ -61,13 +62,14 @@ export default function NewsletterForm() {
           aria-invalid={email !== '' && !isValidEmail(email)}
           className="w-full sm:flex-1 rounded-xl border border-neutral-300 px-4 py-3 outline-none focus:ring-2 focus:ring-accent"
         />
-        <button
+        <LiquidMetalButton
           type="submit"
-          className="px-5 py-3 rounded-xl border border-neutral-300 hover:bg-neutral-50 transition-colors"
+          loading={status === 'loading'}
           disabled={status === 'loading'}
+          size="md"
         >
-          {status === 'loading' ? 'SENDING…' : 'SUBMIT'}
-        </button>
+          SUBMIT
+        </LiquidMetalButton>
       </form>
       {message && (
         <div className={`mt-2 text-sm ${status==='success' ? 'text-green-600' : 'text-rose-600'}`}>{message}</div>

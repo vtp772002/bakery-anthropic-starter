@@ -1,9 +1,13 @@
+"use client";
+
 import { breadFactoryMenuCategories } from "@/lib/menu";
 import Link from "next/link";
 import MenuCategoryClient from "@/components/MenuCategoryClient";
+import { LiquidMetalButton } from "@/components/ui/liquid-metal-button";
+import { use } from "react";
 
-export default async function MenuCategoryPage({ params }: { params: Promise<{ category: string }> }) {
-  const { category } = await params;
+export default function MenuCategoryPage({ params }: { params: Promise<{ category: string }> }) {
+  const { category } = use(params);
 
   const currentCategory = breadFactoryMenuCategories.find((cat) => cat.slug === category);
   const allCategories = breadFactoryMenuCategories;
@@ -16,9 +20,13 @@ export default async function MenuCategoryPage({ params }: { params: Promise<{ c
           <p className="text-neutral-600 mb-6">Vui lòng chọn một danh mục bên dưới.</p>
           <div className="flex flex-wrap justify-center gap-3">
             {allCategories.map((c) => (
-              <Link key={c.slug} className="btn btn-accent rounded-xl" href={`/menu/${c.slug}`}>
+              <LiquidMetalButton 
+                key={c.slug} 
+                size="md"
+                onClick={() => window.location.href = `/menu/${c.slug}`}
+              >
                 {c.name}
-              </Link>
+              </LiquidMetalButton>
             ))}
           </div>
         </div>

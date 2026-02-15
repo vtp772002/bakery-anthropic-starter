@@ -4,6 +4,7 @@ import { beverages } from "@/lib/data";
 import { useCart } from "@/components/cart/CartContext";
 import Image from "next/image";
 import Link from "next/link";
+import { LiquidMetalButton } from "@/components/ui/liquid-metal-button";
 
 export default function BeveragesPage() {
   const { addItem } = useCart();
@@ -48,14 +49,14 @@ export default function BeveragesPage() {
                 <div className="font-semibold">${b.price.toFixed(2)}</div>
               </div>
               <div className="mt-4 flex justify-end">
-                <button
-                  className="btn btn-accent rounded-xl"
+                <LiquidMetalButton
+                  size="md"
                   onClick={() =>
                     addItem({ id: `bev_${b.id}`, name: b.name, price: b.price, image: b.image, qty: 1 })
                   }
                 >
                   Add to cart
-                </button>
+                </LiquidMetalButton>
               </div>
             </div>
           ))}

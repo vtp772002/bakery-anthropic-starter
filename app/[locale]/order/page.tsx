@@ -1,3 +1,5 @@
+import { LiquidMetalButton } from "@/components/ui/liquid-metal-button";
+
 export default function OrderPage() {
   return (
     <div className="container py-8 md:py-16">
@@ -71,12 +73,12 @@ export default function OrderPage() {
             </div>
             
             <div className="flex justify-center">
-              <button
+              <LiquidMetalButton
                 type="submit"
-                className="btn btn-accent rounded-lg py-3 px-8 font-medium"
+                size="lg"
               >
                 Submit Order
-              </button>
+              </LiquidMetalButton>
             </div>
           </form>
           

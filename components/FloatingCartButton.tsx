@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { ShoppingCart } from "lucide-react";
 import CartDrawer from "./CartDrawer";
 import { useCart } from "./cart/CartContext";
+import { LiquidMetalButton } from "./ui/liquid-metal-button";
 
 export default function FloatingCartButton() {
   const [open, setOpen] = useState(false);
@@ -19,20 +20,22 @@ export default function FloatingCartButton() {
 
   return (
     <>
-      <button
-        aria-label="Open cart"
-        onClick={() => setOpen(true)}
-        className="hide-when-chat-open fixed right-4 bottom-20 md:hidden z-50 rounded-full shadow-cardHover border border-accent bg-accent text-accent-contrast p-3"
-      >
-        <div className="relative">
-          <ShoppingCart />
-          {qtyTotal > 0 && (
-            <span className="absolute -top-2 -right-2 bg-black text-white text-[10px] leading-none rounded-full px-1.5 py-0.5">
-              {qtyTotal}
-            </span>
-          )}
-        </div>
-      </button>
+      <div className="hide-when-chat-open fixed right-4 bottom-20 md:hidden z-50">
+        <LiquidMetalButton
+          size="md"
+          onClick={() => setOpen(true)}
+          aria-label="Open cart"
+        >
+          <div className="relative">
+            <ShoppingCart />
+            {qtyTotal > 0 && (
+              <span className="absolute -top-2 -right-2 bg-black text-white text-[10px] leading-none rounded-full px-1.5 py-0.5">
+                {qtyTotal}
+              </span>
+            )}
+          </div>
+        </LiquidMetalButton>
+      </div>
       <CartDrawer inlineTrigger={false} open={open} onOpenChange={setOpen} />
     </>
   );

@@ -6,7 +6,7 @@ import Image from "next/image";
 import StripeClientProvider from "@/components/StripeClientProvider";
 import PaymentForm from "@/components/PaymentForm";
 import { useCart } from "@/components/cart/CartContext";
-import StyledButton from "@/components/StyledButton";
+import { LiquidMetalButton } from "@/components/ui/liquid-metal-button";
 import { locations } from "@/lib/data";
 
 type StepKey = "customer" | "shipping" | "payment" | "review";
@@ -205,9 +205,9 @@ export default function CheckoutPage() {
                   />
                 </div>
                 <div className="flex justify-end">
-                  <StyledButton variant="accent" onClick={() => setStep("shipping")} disabled={!customerComplete}>
+                  <LiquidMetalButton onClick={() => setStep("shipping")} disabled={!customerComplete}>
                     {t('customer.next')}
-                  </StyledButton>
+                  </LiquidMetalButton>
                 </div>
               </div>
             )}
@@ -215,12 +215,20 @@ export default function CheckoutPage() {
             {step === "shipping" && (
               <div className="space-y-4">
                 <div className="grid grid-cols-2 gap-3">
-                  <button type="button" className={`btn rounded-xl ${shippingMethod==='shipping' ? 'btn-accent' : 'btn-secondary'}`} onClick={() => setShippingMethod('shipping')}>
+                  <LiquidMetalButton
+                    type="button"
+                    size="md"
+                    onClick={() => setShippingMethod('shipping')}
+                  >
                     Shipping
-                  </button>
-                  <button type="button" className={`btn rounded-xl ${shippingMethod==='pickup' ? 'btn-accent' : 'btn-secondary'}`} onClick={() => setShippingMethod('pickup')}>
+                  </LiquidMetalButton>
+                  <LiquidMetalButton
+                    type="button"
+                    size="md"
+                    onClick={() => setShippingMethod('pickup')}
+                  >
                     Local Pickup
-                  </button>
+                  </LiquidMetalButton>
                 </div>
                 {shippingMethod === 'pickup' ? (
                   <div>
@@ -343,8 +351,8 @@ export default function CheckoutPage() {
                   />
                 </div>
                 <div className="flex justify-between">
-                  <StyledButton variant="secondary" onClick={() => setStep("customer")}>{t('shipping.prev')}</StyledButton>
-                  <StyledButton variant="accent" onClick={() => setStep("payment")} disabled={!shippingComplete}>{t('shipping.next')}</StyledButton>
+                  <LiquidMetalButton onClick={() => setStep("customer")}>{t('shipping.prev')}</LiquidMetalButton>
+                  <LiquidMetalButton onClick={() => setStep("payment")} disabled={!shippingComplete}>{t('shipping.next')}</LiquidMetalButton>
                 </div>
               </div>
             )}
@@ -382,8 +390,8 @@ export default function CheckoutPage() {
                   </div>
                 )}
                 <div className="flex justify-between">
-                  <StyledButton variant="secondary" onClick={() => setStep("shipping")}>{t('payment.prev')}</StyledButton>
-                  <StyledButton variant="accent" onClick={() => setStep("review")}>{t('payment.next')}</StyledButton>
+                  <LiquidMetalButton onClick={() => setStep("shipping")}>{t('payment.prev')}</LiquidMetalButton>
+                  <LiquidMetalButton onClick={() => setStep("review")}>{t('payment.next')}</LiquidMetalButton>
                 </div>
               </div>
             )}
@@ -395,8 +403,8 @@ export default function CheckoutPage() {
                   <div className="text-sm text-neutral-600">{t('review.example')}</div>
                 </div>
                 <div className="flex justify-between">
-                  <StyledButton variant="secondary" onClick={() => setStep("payment")}>{t('review.prev')}</StyledButton>
-                  <StyledButton variant="accent">{t('review.pay')}</StyledButton>
+                  <LiquidMetalButton onClick={() => setStep("payment")}>{t('review.prev')}</LiquidMetalButton>
+                  <LiquidMetalButton type="submit">{t('review.pay')}</LiquidMetalButton>
                 </div>
               </div>
             )}
@@ -427,7 +435,12 @@ export default function CheckoutPage() {
                       </div>
                       <div className="flex items-center gap-2 shrink-0">
                         <input type="number" className="w-16 px-2 py-1 border border-neutral-300 rounded" value={it.qty} min={1} onChange={(e)=> updateQty(it.id, Number(e.target.value))} />
-                        <button className="btn btn-ghost" onClick={()=>removeItem(it.id)}>Remove</button>
+                        <LiquidMetalButton
+                          size="sm"
+                          onClick={()=>removeItem(it.id)}
+                        >
+                          Remove
+                        </LiquidMetalButton>
                       </div>
                     </div>
                   ))
